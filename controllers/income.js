@@ -53,15 +53,13 @@ exports.deleteIncome = async (req, res) => {
 };
 
 exports.getIncomeDetailById = async (req, res) => {
-  console.log("req.body", req.body);
   const { id } = req.body;
-
-  //   try {
-  //     const income = await IncomeSchema.findOne({ _id: id });
-  //     console.log("incomes", income);
-  //     res.status(200).json(income);
-  //   } catch (error) {
-  //     console.log("ERROR :", error);
-  //     res.status(500).json({ message: "Server Error." });
-  //   }
+  try {
+    const income = await IncomeSchema.findOne({ _id: id });
+    console.log("incomes", income);
+    res.status(200).json(income);
+  } catch (error) {
+    console.log("ERROR :", error);
+    res.status(500).json({ message: "Server Error." });
+  }
 };

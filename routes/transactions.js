@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   res.send("Hello World");
 });
 router.get("/get-incomes", getIncomes);
-router.get("/getIncomeByid", getIncomeDetailById);
+router.post("/getIncomeByid", getIncomeDetailById);
 router.post("/add-income", addIncome);
 router.delete("/delete-income/:id", deleteIncome);
 
